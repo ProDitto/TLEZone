@@ -5,9 +5,10 @@ import "tle-zone/internals/model"
 // UserRepository handles persistence for users.
 type UserRepository interface {
 	Create(user *model.UserDB) error
-	FindByID(id int) (*model.UserDB, error)
-	FindByEmail(email string) (*model.UserDB, error)
-	Update(user *model.UserDB) error
+	FindByID(id int) (*model.User, error)
+	FindByEmail(email string) (*model.User, error)
+	FindByCreds(username, hashedPassword string) (*model.User, error)
+	Update(user *model.User) error
 	BanUser(userID int) error
 }
 

@@ -45,6 +45,7 @@ type CodeExecutionService interface {
 
 type AdminService interface {
 	CreateProblem(problem *model.ProblemDetail) error
+	UpdateProblem(problem *model.ProblemDetail) error
+	InvalidateProblem(problem *model.ProblemDetail) error
 	BanUser(userID int) error
-	ViewAllSubmissions(problemID int) ([]*model.Submission, error)
 }
